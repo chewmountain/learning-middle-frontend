@@ -9,3 +9,5 @@ export const MainPageLazy = lazy(() => import("./MainPage"));
  * Для этого необходим Code Splitting. Благодаря ему для каждой страницы будет создаваться отедльный
  * js-файл.
  */
+
+// https://react.dev/reference/react/lazy
