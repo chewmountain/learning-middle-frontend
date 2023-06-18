@@ -10,8 +10,14 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(styles.Navbar, {}, [className])}>
+            {/**
+             * Отдельно сделали компонент для кнопки со сменой темы
+             */}
             <ThemeSwitcher />
             <div className={styles.links}>
+                {/**
+                 * Отдельно вынесли ссылки с роутами
+                 */}
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     to={"/"}

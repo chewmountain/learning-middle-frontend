@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { routeConfig } from "shared/config/routeConfig/routeConfig";
 
 /**
- * Так хардкодить роуты не очеьн хорошая практика.
+ * Хардкодить роуты не очеьн хорошая практика.
  * Поэтому создадим конфиг, в котором будем определеять эти роуты.
  * Создаем в shared/config/routeConfig. Из него получаем все наши роуты.
  * Далее с помощью Object.values получаем все значения массива, проходимся по нему через map

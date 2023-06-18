@@ -3,6 +3,7 @@ import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+    // Для работы остальных файлов устанавливаем file-loader
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff)$/i,
         use: [
@@ -12,6 +13,11 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         ],
     };
 
+    // Для работы svg устанавливаем @svgr/webpack плагин и настраиваем его
+    /**
+     * Но сразу с тайпскриптом они все равно не начнут работать.
+     * Необходимо объявить для тайпскрипта декларацию в app/types/global.d.ts
+     */
     const svgLoader = {
         test: /\.svg$/,
         use: ["@svgr/webpack"],

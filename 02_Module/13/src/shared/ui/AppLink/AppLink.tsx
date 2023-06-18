@@ -8,11 +8,18 @@ export enum AppLinkTheme {
     SECONDARY = "secondary",
 }
 
+// Расширили интерфейс с помощью LinkProps (встроен в react router dom)
+// Получим тут все пропсы для ссылок Link
 interface AppLinkProps extends LinkProps {
     className?: string;
+    // Для возможности использовать темы на ссылках
     theme?: AppLinkTheme;
 }
 
+/**
+ * Указываем типизацию нашего компонента с помощью FC (встроен в реакт - Functional Component)
+ * В generic передаем наш интерфейс, чтобы расширить принимаемые пропсы
+ */
 export const AppLink: FC<AppLinkProps> = (props) => {
     const {
         to,

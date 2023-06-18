@@ -10,6 +10,7 @@ declare module "*.scss";
 // }
 
 // Для того, чтобы ts понимал что это за файлы: svg, png и пр.
+// Объявляем декларацию для этих файлов.
 declare module "*.svg" {
     const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     export default content;

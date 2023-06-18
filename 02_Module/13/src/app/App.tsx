@@ -13,6 +13,9 @@ const App = () => {
     return (
         <div className={classNames("app", {}, [theme])}>
             <Navbar />
+            {/** Все роуты теперь в одном компоненте AppRouter, который, в свою очередь,
+             * конфигурируем через /src/shared/config/routerConfig
+             */}
             <AppRouter />
         </div>
     );
