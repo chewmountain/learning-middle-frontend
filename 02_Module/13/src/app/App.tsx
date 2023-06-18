@@ -9,14 +9,10 @@ import { Navbar } from "widgets/Navbar";
  */
 
 const App = () => {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
     return (
         <div className={classNames("app", {}, [theme])}>
             <Navbar />
-            <button onClick={toggleTheme}>Swtich Theme</button>
-            {/**
-             * Все роуты перенесли в отдельный компонент AppRouter
-             */}
             <AppRouter />
         </div>
     );
