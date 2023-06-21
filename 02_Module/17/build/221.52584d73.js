@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_2023_05_24_my_app=self.webpackChunk_2023_05_24_my_app||[]).push([[221],{221:(_,e,a)=>{a.r(e),a.d(e,{default:()=>s});var n=a(893),r=a(72);const s=function(){var _=(0,r.$G)("about").t;return(0,n.jsx)("div",{children:(0,n.jsx)("h3",{children:_("О нас")})})}}}]);

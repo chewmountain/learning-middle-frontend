@@ -49,5 +49,23 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+    /**
+     * Устанавливаем babel для транспиляции нашего кода (для поддержки старыми браузерами)
+     * https://babeljs.io/setup#installation
+     * Важно заметить, что нужны файлы с расширениями js, ts и tsx!
+     * На сайте только для js файлов.
+     */
+    const babelLoader = {
+        test: /\.(js|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ["@babel/preset-env"],
+                plugins: ["i18next-extract"],
+            },
+        },
+    };
+
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 }
