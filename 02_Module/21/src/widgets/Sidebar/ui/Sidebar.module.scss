@@ -3,6 +3,7 @@
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
+    overflow: hidden;
     transition: width 0.3s;
 }
 

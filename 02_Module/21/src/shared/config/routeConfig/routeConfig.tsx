@@ -1,5 +1,6 @@
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
+import { NotFoundPage } from "pages/NotFoundPage";
 import { RouteProps } from "react-router-dom";
 
 /**
@@ -7,9 +8,14 @@ import { RouteProps } from "react-router-dom";
  * Это нужно, если мы захотим хранить информацию о роутах в редакс, стейте.
  */
 
+/**
+ * Создание несуществующих маршрутов (404 page). Лоадер для загрузки страниц
+ */
 export enum AppRoutes {
     MAIN = "main",
     ABOUT = "about",
+    // Добавили 404 страницу
+    NOT_FOUND = "not_found",
 }
 
 /**
@@ -20,6 +26,8 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: "/",
     [AppRoutes.ABOUT]: "/about",
+    // Указываем * чтобы по любому другому, отличному от представленных выше путей, была страница 404
+    [AppRoutes.NOT_FOUND]: "*",
 };
 
 /**
@@ -40,5 +48,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
         element: <AboutPage />,
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: RoutePath.not_found,
+        element: <NotFoundPage />,
     },
 };
