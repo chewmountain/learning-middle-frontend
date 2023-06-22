@@ -2,8 +2,12 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types/config";
 
+/**
+ * svgr loader, file loader button UI kit
+ */
+
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
-    // Для работы остальных файлов устанавливаем file-loader
+    // Для возможности работы с остальными файлами устанавливаем file-loader
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff)$/i,
         use: [
