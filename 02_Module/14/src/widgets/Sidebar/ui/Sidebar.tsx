@@ -3,6 +3,10 @@ import styles from "./Sidebar.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
+/**
+ * Sidebar. Layout приложения
+ */
+
 interface SidebarProps {
     className?: string;
 }
