@@ -3,6 +3,10 @@ import { MainPage } from "pages/MainPage";
 import { RouteProps } from "react-router-dom";
 
 /**
+ * AppRouter. Конфиг для роутера
+ */
+
+/**
  * Объявляем список роутов и названия для них.
  * Это нужно, если мы захотим хранить информацию о роутах в редакс, стейте.
  */
