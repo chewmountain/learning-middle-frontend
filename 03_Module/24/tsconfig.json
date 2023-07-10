@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // Для красивых путей. Все экспорты и импорту будут идти из папки src
+    // Но нужно настроить пути в вебпаке
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  /**
+  По умолчанию в верху у нас указан baseUrl и paths. Мы читаем
+  только paths в папке src. Но, чтобы у нас работали ts файлы вне папки
+  src, добавляем include и указываем какие еще ts файлы "читать"
+  */
+  "include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
+}
