@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // Для красивых путей. Все экспорты и импорту будут идти из папки src
+    // Но нужно настроить пути в вебпаке
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  /**
+  По умолчанию в верху у нас указан baseUrl и paths. Мы читаем
+  только paths в папке src. 
+  Чтобы читался и конфиг jest'а, было явно указан путь до него, что
+  перезатерло остальное.
+  Для этого в include снова были добавлены пути и в папку src
+  */
+  "include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
+}
