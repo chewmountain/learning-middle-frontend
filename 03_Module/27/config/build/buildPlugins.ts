@@ -8,7 +8,7 @@ export function buildPlugins({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HTMLWebpackPlugin({
       template: paths.html,
     }),
@@ -20,11 +20,16 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    /**
-     * Добавили Bundle Analyzer
-     * https://www.npmjs.com/package/webpack-bundle-analyzer
-     * openAnalyzer is default true
-     */
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
+
+  /**
+   * Добавляем, если режим сборки development, Bundle Analyzer
+   * https://www.npmjs.com/package/webpack-bundle-analyzer
+   * openAnalyzer is default true
+   */
+  if (isDev) {
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+  }
+
+  return plugins;
 }
