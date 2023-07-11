@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install modules
-        run: npm install
+        run: npm run --prefix 03_Module/27 install
       - name: Build production project
-        run: npm run build:prod
+        run: npm run --prefix 03_Module/27 build:prod
         if: always()
       - name: Unit testing
-        run: npm run test:unit
+        run: npm run --prefix 03_Module/27 test:unit
         if: always()
       - name: Build storybook
-        run: npm run storybook:build
+        run: npm run --prefix 03_Module/27 storybook:build
         if: always()
